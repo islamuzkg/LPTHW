@@ -1,1 +1,2 @@
-this is test file to fetch 
+#this is test file to fetch 
+Confirmed that "git pull <repo link>" works
