@@ -70,7 +70,7 @@ print "You said %r" % likes
 
 
 
-Rference link: https://www.youtube.com/watch?v=8nmekdC2r-c
+Reference link: https://www.youtube.com/watch?v=8nmekdC2r-c
 
 
 
