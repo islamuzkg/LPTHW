@@ -23,9 +23,19 @@ and we use it to briefly state a number is being taken with a certain modules: a
 -----------------------------------------------------
 # ex04.py "Variables and Names" 
 - _: underscore in variable names
+	There are 5 cases for using the underscore in Python.
+* For storing the value of last expression in interpreter.
+* For ignoring the specific values. (so-called “I don’t care”)
+* To give special meanings and functions to name of vartiables or functions, also treat it as private variable
+* To use as ‘Internationalization(i18n)’ or ‘Localization(l10n)’ functions.
+* To separate the digits of number literal value.
+
+
 - floating point:  numbers with decimals
 - integerg: number w/o decimals
 
+car = 'BMW'
+print "I love my", car
 ----------------------------------------------------
 # ex05.py "More Variables and Printing"
 - format strings
@@ -34,25 +44,48 @@ and we use it to briefly state a number is being taken with a certain modules: a
 - %d: for numbers ("digits")
 - %r: for "raw data" (atually, "representation")
 
+my_name = 'Islom Akhmedov'
+print "My name is %s." % my_name
+
 ---------------------------------------------------
 # ex06.py "Strings and Text"
 - ': single quote
 - ": double quote
 
+age = 30
+weight = 200
+height = '5.11 inch tall'
+
+print "I am %d years old, I weigh %d lbs and %s." % (age ,weight, height)
+
 --------------------------------------------------
 # ex07.py "More Printing"
 - +: for joining the strings w/o spaces
 - ,: for joining strings with spaces
+
+a = 'Py'
+b = 'thon'
+
+print a + b
+
 ---------------------------------------------------
 # ex08.py "Printing, Printing"
 - True: Boolean value/keyword that does not need quotes
 - False: Boolean value/keyword that does not need quotes
 
+formatter = "%r %r"
+
+print formatter % ('Super', 'man')
+
 ----------------------------------------------------
 # ex09.py "Printing, Printing, Printing"
 - \: backslash, used to escape characters
 - \n: new line command
-- """: triple quotes to set off several lines of text
+- """ """: triple quotes to set off several lines of text
+
+days = "Mon\nTue\nWed\nThu\nFri\nSat\nSun"
+print "Here are the days:", days
+
 
 ----------------------------------------------------
 # ex10.py "What Was That?"
@@ -61,12 +94,24 @@ and we use it to briefly state a number is being taken with a certain modules: a
 - \": to escape a doble quote within a string
 - \r: carriage return within a string
 - \t: tab within a string
-- ''': Alternative method of triple quotes
+- ''' ''': Alternative method of triple quotes
+
+# The use of \ character encodes difficult to type charaters into a string.
+print ' I am 6\'2" tall' # escape single-quote inside string, we could do the same for double-quotes.
+
+# \n is used tof new line and \t is for tab character
+print "\t This is cat food"
 
 
 ------------------------------------------------------
 # ex11.py "Asking Questions" 
 - raw_input: to get typed input from user
+
+print "How old are you?"
+age = raw_input(':?')
+print age
+# This is little advanced, but we can try x = int(raw_input()) which gets the number as string from raw_input() then converts it to an integer using int().
+
 
 --------------------------------------------------------
 # ex12.py "Prompting People"
