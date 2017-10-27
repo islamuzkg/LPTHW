@@ -201,13 +201,13 @@ def add(a, b):
 	total = a + b
 	return(total)
 		
-	
 age = 30
 weight = 30 + 170
 all_var = age, weight
 print "Your age is %d and weight is %d" % (all_var)
-total = add(age, weight) 
-print "I am just adding them both and total amount is %d"  % total
+total_add = add(age, weight) 
+print "I am just adding them both and total amount is %d"  % total_add
+
 
 
 
