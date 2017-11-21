@@ -195,6 +195,21 @@ print "You said %r" % likes
 
 - return: a valuew that a function makes available to use in a variable.
 
+# Below is 
+def add(a, b):
+	print "Adding %d + %d" % (a, b)
+	total = a + b
+	return(total)
+		
+age = 30
+weight = 30 + 170
+all_var = age, weight
+print "Your age is %d and weight is %d" % (all_var)
+total_add = add(age, weight) 
+print "I am just adding them both and total amount is %d"  % total_add
+
+
+
 
 
 Reference link: https://www.youtube.com/watch?v=8nmekdC2r-c
