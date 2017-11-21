@@ -57,4 +57,57 @@ def print_first_and_last_sorted(sentence):
 # computer called "ex25.pyc." which is "Python Bytecode Document."
 # which helps the module load faster in the future. 
 # You can, however, delete it if you want to
-		
+
+# 3. Create an object to work with.
+# >>> sentence = "All good things come to those who wait."
+
+# 4. Run "break_words" and show results
+# >>> words = "ex25.break_words(sentence)"
+# >>> words
+# Note: You can also  print without  the intermidiate variable:
+# >>> print ex25.break_words(sentence)
+
+# 5. Run "sort_words" and show results
+# >>> sorted_words = ex25.sort_words(words)
+# >>> sorted_words 
+
+# 6. Run "print_first_word"(displays automatically)
+# >>> ex25.print_first_word(words)
+
+# 7. Run"print_last_word"(displays automatically)
+# >>> ex25.print_last_word(words)
+
+# 8. Run "sort_sentence" and show results
+# >>> sorted_sentence = ex25.sort_sentence(sentence)
+# >>> sorted_sentence
+# Note: Zed used the object "sorted_words" for these
+# but that might be mistake bc he used that earlier
+# and all have variables so far use the function name, so 
+# I'am calling the object "sorted_sentence."
+# The output looks the same as "sorted_sentence." but used
+# a different process to get there.
+
+# 9. Run "print_first_and_last"(displays automatically)
+# >>> ex25.print_first_and_last(sentence)
+
+# 10. Run "print_first_and_last_sorted"(displays automatically)
+# >>> ex25.print_first_and_last_sorted(sentence)
+
+# If you type help(ex25) you'll see the first block of 
+# text I wrote at the top and the text in triple quotes
+# for each function below
+
+# If you type help(ex25.break_words) you'll see just  
+# the triple qoute text for that function. That's called
+# a "documentation comment"
+
+# Finally, you can avoid typing "ex25." at the beginning
+# of everything if you import the module like this instead:
+# >>>  from ex25 import * 
+# Then  you can run the commands like this:
+
+# >>> sentence = "All good things come to those who wait."
+# >>> print break_words(sentece)
+
+# to quite Python interpreter run command below:
+# >>> quit()
