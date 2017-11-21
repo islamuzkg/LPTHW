@@ -44,5 +44,17 @@ def print_first_and_last_sorted(sentence):
 	print_first_word(words)
 	print_last_word(words)
 	
-	
+# Here are the iinstructions:
+# reference Link: https://www.youtube.com/watch?v=sNmLKBsOjto
+
+# 1. Start Python.
+# python
+
+# 2. Import this newly defined module.
+# >>> ipmort ex25
+# Note: Dom't type ".py" ou you'll get an error
+# When you import it will create a new file on your
+# computer called "ex25.pyc." which is "Python Bytecode Document."
+# which helps the module load faster in the future. 
+# You can, however, delete it if you want to
 		
