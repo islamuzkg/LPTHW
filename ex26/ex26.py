@@ -1,3 +1,5 @@
+# Reference link: https://learnpythonthehardway.org/book/exercise26.txt
+# I have completed this exercise, the task was to correct the file from the above link
 def break_words(stuff):
         """This function will break up words for us."""
         words = stuff.split(' ')
