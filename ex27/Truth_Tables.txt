@@ -37,6 +37,28 @@
 |False and False  |False          |
 +-----------------+---------------+
 
+So, if we use and with any two operands and if both of them are True, then the result is True. Otherwise, it is False
+
+And if we are using or and if any of the two operands is True, then it is True and it will be False if both the operands are False.
+
+'and' can be understood as both ( first and second both )
+'or' can be understood as either ( first or second any ). See the next line to understand it more clearly.
+
+'and' and 'or' of programming are very much similar to English words 'and' and 'or'. 
+
+In English, 
+A and B - Both A and B. 
+A or B - Either A or B. 
+
+In programming, 
+A and B - Both A and B. 
+A or B - Either A or B or both. 
+
+So, if you are writing A and B, then the expression is true if both A and B are true. Whereas, if you are writing A or B, then the expression is true if either A or B or both are true.
+
+True or False -> As 'or' is used, either of the two is true -> True
+True and False -> As 'and' is used, both are not true -> False
+
 ************************************************
 
 +-----------------------+---------------+
