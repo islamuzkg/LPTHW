@@ -18,7 +18,7 @@
 +----------------+---------------+
 |True or True    |True           |
 +----------------+---------------+
-|False or True   |False          |
+|False or True   |True           |
 +----------------+---------------+
 |False or False  |False          |
 +----------------+---------------+
@@ -36,6 +36,28 @@
 +-----------------+---------------+
 |False and False  |False          |
 +-----------------+---------------+
+
+So, if we use and with any two operands and if both of them are True, then the result is True. Otherwise, it is False
+
+And if we are using or and if any of the two operands is True, then it is True and it will be False if both the operands are False.
+
+'and' can be understood as both ( first and second both )
+'or' can be understood as either ( first or second any ). See the next line to understand it more clearly.
+
+'and' and 'or' of programming are very much similar to English words 'and' and 'or'. 
+
+In English, 
+A and B - Both A and B. 
+A or B - Either A or B. 
+
+In programming, 
+A and B - Both A and B. 
+A or B - Either A or B or both. 
+
+So, if you are writing A and B, then the expression is true if both A and B are true. Whereas, if you are writing A or B, then the expression is true if either A or B or both are true.
+
+True or False -> As 'or' is used, either of the two is true -> True
+True and False -> As 'and' is used, both are not true -> False
 
 ************************************************
 
@@ -66,6 +88,17 @@
 |not (False and False)  |True           |
 +-----------------------+---------------+
 
+not -> You can understand 'not' by thinking that it will do the opposite.
+not False is True
+not True is False
+
+Yeah! It is simple.
+E.g.-
+not (True or False) -> False
+How?
+
+( True or False ) is True because or is used and at least one of the operands is True. Then ( not (True) ) is False.
+
 ***********************************************
 
 +------------+-------------+
@@ -91,5 +124,15 @@
 +------------+-------------+
 |0 == 1      |False        |
 +------------+-------------+
-|0 == 0      |False        |
+|0 == 0      |True         |
 +------------+-------------+
+
+!= is not equal to operator. It gives True if both the operands are not equal else it gives False.
+
+> is greater than or equal to operator. It gives True if the first operand is greater than the second operand.
+
+>= is greater than or equal to operator. It gives True if the first operand is greater than or equal to the second operand.
+
+Similarly, < and <= are less than and less than or equal to operators respectively.
+
+Reference Link: https://www.codesdope.com/python-boolean/
