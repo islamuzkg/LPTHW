@@ -36,3 +36,5 @@ if people <= dogs:
 if people == dogs:
 	# 20 == 20 is true, so this will print
 	print "People are dogs."
+
+Reference Link: https://www.youtube.com/watch?v=yZHPUvoSKeA
