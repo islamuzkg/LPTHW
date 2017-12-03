@@ -180,9 +180,7 @@ elif door == "8":
 	else:
 		print "please enter animal name you like, else just say no. No judging."
 		animal_name = raw_input("> ")
-		if animal_name == "NO" or animal_name == "no":
-			print "It is ok, no judging"
-		elif animal_name == "No":
+		if (animal_name == "NO" or animal_name == "no") or animal_name == "No":
 			print "It is ok, no judging"
 		else:
 			print "%s is cool one" % animal_name
