@@ -12,7 +12,7 @@ You're standing in an open field west of a white house, with boarded fron door.
 A secret path leads to southwest into the forest.
 '''
 def mailbox():
-	print "There is a small mailbox."
+	print "\nThere is a small mailbox."
 	
 	choice = raw_input(green("What would you do? \n>>>")) # Here,we are using green() to prompt us in green color.
 	
@@ -21,9 +21,12 @@ def mailbox():
 		print "Are you serious?"
 		print "Please try again!\n"
 		mailbox()
-	if choice.lower() == "open mailbox":
+	elif choice.lower() == "open mailbox":
 		print "\nThat's better."
-	if choice.lower() == "open door.":
+	elif choice.lower() == "open door.":
 		print "\nThe door is boarded and you can not remove boards. Please try again."
+		mailbox()
+	else:
+		print "\nKeep looking for better option"
 		mailbox()
 mailbox()
