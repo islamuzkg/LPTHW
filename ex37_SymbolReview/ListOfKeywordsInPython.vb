@@ -196,9 +196,26 @@ if not condition:
 
 break, continue
 
-break and continue are used inside for and while loops ro alter theor normal behavior.
+"break" and "continue" are used inside for and while loops to alter their normal behavior.
 
-break will end the smalest loop in is in and control flows to statement immediately below the loop. continue casuses tothe end the current  iteration of the loop, but not the whole loop.
+"break" will end the smallest loop it is in and control flows to statement immediately below the loop. continue causes to the end the current  iteration of the loop, but not the whole loop.
+
+This can be illustrated with the following two exampmles:
+------------------------
+for i in range(1,11):
+	if i == 5:
+		break
+	print (i)
+------------------------
+Output:
+
+1
+2
+3
+4
+------------------------
+
+Here, the for loop indends to print numbers from 1 to 10. But if condition is met when "i" is equal to 5 and we break from  the loop. Thus, only the range 1 to 4 is printed.
 
 
 
