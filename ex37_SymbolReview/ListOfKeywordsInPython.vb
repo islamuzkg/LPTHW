@@ -216,49 +216,50 @@ Output:
 ------------------------
 
 Here, the for loop indends to print numbers from 1 to 10. But if condition is met when "i" is equal to 5 and we break from  the loop. Thus, only the range 1 to 4 is printed.
+------------------------
+for i in range(1,11):
+    if i == 5:
+        continue
+    print(i)
+-----------------------
+Output:
+
+1
+2
+3
+4
+6
+7
+8
+9
+10
+-----------------------------
+
+Here we use continue for the same program. So, when the condition is met, that iteration is skippet, but we do not exit the loop. Hence, all the values except 5 is printed out.
 
 
+"class"
+
+"class" is collection of related attributes and methods that try to represent a real world situation. This idea of putting data and function togather in a class is central tothe concept of object-oriented programming(OOP).
+
+Classes can be defined anywhere in a program. But it is a good practice to define a single class in a module. Following is a simple udage:
+---------------------------
+class ExampleClass:
+    def function1(parameters):
+        …
+    def function2(parameters):
+        …
+---------------------------
 
 
+"def"
 
+"def" is used to define a user-defined finction.
 
+Function is a clock of related statements, which togather does some specific task. It helps us organize code into manageable chunks and also todo some repetitive task.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The usage to def is shown below:
+--------------------------------
+def function_name(parameters):
+    …
+------------------------------
