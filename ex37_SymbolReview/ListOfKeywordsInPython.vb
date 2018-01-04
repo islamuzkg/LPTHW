@@ -263,3 +263,51 @@ The usage to def is shown below:
 def function_name(parameters):
     …
 ------------------------------
+
+"del"
+
+"del" is used to delete the referece to an object. Evrything is object in Python. We can deletw a a variablw reference using "del"
+------------------------
+>>> a = b = 5
+>>> del a
+>>> a
+Traceback (most recent call last):
+  File "<string>", line 301, in runcode
+  File "<interactive input>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> b
+5
+-------------------------
+
+Here we can see that the reference of the variable "a" was deleted. So, it is no longer defined. But "b" still exists.
+
+"del" is also used to delete items from a list o a dictionary:
+-------------------------
+>>> a = ['x','y','z']
+>>> del a[1]
+>>> a
+['x', 'z']
+--------------------------
+
+if, else, elif 
+
+if, else, elif are used to test some condition and execute block only if the condition is true, then we use if and elif. elif is short for else if. else is the block which is executed if the condition is false. This will be clear with the following example:
+-------------------------------
+def if_example(a):
+    if a == 1:
+        print('One')
+    elif a == 2:
+        print('Two')
+    else:
+        print('Something else')
+
+if_example(2)
+if_example(4)
+if_example(1)
+-----------------------------
+Output:
+
+Two
+Something else
+One
+-----------------------------
