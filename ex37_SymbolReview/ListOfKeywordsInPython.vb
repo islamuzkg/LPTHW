@@ -311,3 +311,13 @@ Two
 Something else
 One
 -----------------------------
+Here , the function checks the input number and prints the result if it is 1 or 2. Any input other than this will cause the else part of the code to execude.
+
+
+except, raise, try
+
+except, raise, try are used with exception in Python.
+
+Exceptions are basically errors that suggests something went wrong while executing our program. IOError, ValueError, ZeroDevisionError, ImportError, NameError, TypeError etc. are few examples of exception in Python. "try...except" blocks are used to catch exceptions in Python.
+
+We can raise an exception explicitly with the raise keyword. Following is an example:
