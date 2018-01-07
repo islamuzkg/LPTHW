@@ -321,3 +321,392 @@ except, raise, try are used with exception in Python.
 Exceptions are basically errors that suggests something went wrong while executing our program. IOError, ValueError, ZeroDevisionError, ImportError, NameError, TypeError etc. are few examples of exception in Python. "try...except" blocks are used to catch exceptions in Python.
 
 We can raise an exception explicitly with the raise keyword. Following is an example:
+------------------------------------
+def reciprocal(num):
+    try:
+        r = 1/num #
+    except:
+        print('Exception caught')
+        return
+    return r
+
+print(reciprocal(10))
+print(reciprocal(0))
+----------------------------------
+Output:
+
+0.1
+Exception caught
+None
+-------------------------------------
+note:  
+------------------------------------
+>>> 1 / 2            # Python 3 returns real quotient
+0.5
+>>> 1.0 / 2          # Python 2 returns real quotient
+0.5
+--------------------------------------
+
+Here, the function "reciprocal" returns the reciprocal of the intup number.
+
+When we enter 10, we get the normal out put of 0.1. But when we input 0, a ZeroDivisionError is reaised automatically.
+
+THis is caught by our try...except block and we ruturn None. We could have also raised ZeroDivisionError explicitly the input and handled it elsewhere as folloows:
+---------------------- 
+if num == 0:
+    raise ZeroDivisionError('cannot divide')
+--------------------
+
+'finally'
+
+'finally' is used with try...except block to close up resources or file streams
+
+Using 'finally' ensures that the block of code insight it gets executed even if there is an unhandles exception. 
+For example:
+-----------------------------
+try:
+    Try-block
+except exception1:
+    Exception1-block
+except exception2:
+    Exception2-block
+else:
+    Else-block
+finally:
+    Finally-block
+-----------------------------
+Here if there is an exception in the 'Try-block', it is handled in the except or less block.
+But no matter in what order the execution flows, we can rest that the 'Finally-block' is executed
+even if there is an error. THis is useful in cleaning up the resources.
+
+
+for 
+
+'for' is used for looping. Generally we use 'for' when we know the number of the times we want to loop
+--------------------
+names = ['John', 'Monica', 'Steven','Robin']
+for i in names:
+	print ('Hello' +i)
+--------------------
+Output:
+
+Hello John
+Hello Monica
+Hello Steven
+Hello Robin
+--------------------
+ 
+ from, import
+ 
+ 'import' keyword is used to import modules into current name space.
+ from...import is used to import spcific attributes or functions into the current namespace.
+ For example:
+ -------------------------
+ from math import cos
+ -------------------------
+ now we can use function simply as cos(), no need t write math.cos().
+ 
+ global
+ 
+ 'global' is used to declare that a variable inside the function is global (outside the function).
+ 
+ If we need to read the valuew of tha global variable, it is not necessary to define it as global.
+ This is understood.
+ 
+ If we we need to modify value of global variable inside a function, then we must declare it with global. Otherwise
+  a local variable with the name is created.
+  
+  Following example will help us clarify this. 
+---------------------------------
+ globvar = 10
+def read1():
+    print(globvar)
+def write1():
+    global globvar
+    globvar = 5
+def write2():
+    globvar = 15
+
+read1()
+write1()
+read1()
+write2()
+read1()
+-----------------------------------
+Output:
+
+10
+5
+5
+--------------------------------------
+Here, the read() function is just reading the value of globvar. So, we do not need to declare it as global.
+But the write1() function is modifying the value, so we need to daclare it as global.
+ 
+We can see in our output that the modification did take place (10 is changed to 5). The write2() also tries to modify this value. But we have not 
+declared it as global.
+
+Hence, a new local variable glovar is created which is not visible outside of this function.
+Although we modify this variable to 15, the global variable remains unchanges. This is cleary visible in our output.
+
+in
+
+'in' is used to test if a sequence (list, tuple, string etc) contains a value. It return True if the value is present, else it returns False.
+For example: 
+ 
+----------------------------
+>>> a = [1, 2, 3, 4, 5]
+>>> 5 in a
+True
+>>> 10 in a
+False
+----------------------------
+
+The secondary use of in is to traverse through a sequence in a for loop.
+ 
+------------------------------
+for i in 'hello':
+    print(i)
+------------------------------
+Output:
+
+h
+e
+l
+l
+o
+-----------------------------
+
+'is'
+
+'is' is used in Python for testing object identity. While the == operatoris used to test if two variables are equal or not,
+'is' is used to test if the two varibles refer to the same object.
+
+It returns True if the objects are identical and Falseif not.
+--------------------------------
+>>> True is True
+True
+>>> False is False
+True
+>>> None is None
+True
+----------------------------------
+We know that there is only one instance of True, False and None in Python, so they areidentical.
+----------------------------------
+>>> [] == []
+True
+>>> [] is []
+False
+>>> {} == {}
+True
+>>> {} is {}
+False
+-----------------------------------
+An empty list or dictionary is equel to another empty one. But they are not identical
+objects as they are located seperate in the memory. This is because list and dictionary are mutable (value can be changed).
+-----------------------------------
+>>> '' == ''
+True
+>>> '' is ''
+True
+>>> () == ()
+True
+>>> () is ()
+True
+--------------------------------------
+Unlike the list and dictionary, string and tuple are immutable (value cannot be altered once defined).
+Hence, two equal string or tulpe are identical as well. They refer to the same memory location.
+
+'lambda'
+
+'lambda' is used to create an anonimous finction (function with no name).
+It is an inline function that does not contain a return statement. it consists of an expression that is eveluated and returned.
+For example:
+
+-----------------------------------------
+a = lambda x: x*2
+for i in range(1,6):
+    print(a(i))
+-----------------------------------------
+Output:
+
+2
+4
+6
+8
+10
+-------------------------------------------
+Here, we have created an inline function taht double the value, using the lambda statement.
+We used this to double the values in a list containing 1 to 5.
+
+'nonlocal'
+ 
+The use of 'nonlocal' keyword is very much similar to globa; keyword. 'nonlocal' is used to declare that a variable inside a nested function (function inside a function) is used local to it,
+meaning is lies in the outer inclosing function. If we need to modify the value of a nonlocal variable inside a nested function, we must declare it nonlocal.
+Otherwise a local variable with that name is created inside nested function. 
+Following example will help us to clarify this.
+------------------------------------------
+def outer_function():
+    a = 5
+    def inner_function():
+        nonlocal a
+        a = 10
+        print("Inner function: ",a)
+    inner_function()
+    print("Outer function: ",a)
+
+outer_function()
+-------------------------------------------
+Output:
+
+Inner function:  10
+Outer function:  10
+--------------------------------------------
+Here, inner_function() is nested within the outer_function.
+
+The varibale a in in the outer_function(). SO, if we want to modify it in the inner_function(),
+we mut daclare it as nonlocal. Notice it is not global variable.
+
+Hence, we see from the output that variable was successfully modified inside inner_function(). The result of nonlocal keyword as follows:
+----------------------------------------------
+def outer_function():
+    a = 5
+    def inner_function():
+        a = 10
+        print("Inner function: ",a)
+    inner_function()
+    print("Outer function: ",a)
+
+outer_function()
+----------------------------------------------
+Output:
+
+Inner function:  10
+Outer function:  5
+--------------------------------------------------
+Here, we do not daclare that the variable a inside the nested function in nonlocal.
+Hence, a new local variable with the same name is created, but the nonlocal a is not modofied as see in our output.
+
+'pass'
+
+'pass' is a null statement in Python. Nothing happens when it is executed. It is used as placeholder.
+
+Suppose we have function that is not implemented yet, but we want to implement it in the future. Simple writing,
+-------------------------------------------
+def function(args):
+-------------------------------------------- 
+In the middle of a program will give us IndentationError. Instead of this, we cunstruct a balank body with the pass statement.
+--------------------------------------------
+def function(args):
+    pass
+---------------------------------------------
+We can do the same thing in an empty class as well.
+----------------------------------------------
+class example:
+    pass
+-----------------------------------------------
+
+'return'
+
+'return' statement is used inside a function to exit it and return a value.
+
+If  we do not return explicity, None is returned automatically. 
+This is verified with following example.
+------------------------------------------------
+def func_return():
+    a = 10
+    return a
+
+def no_return():
+    a = 10
+
+print(func_return())
+print(no_return())
+--------------------------------------------------
+Output:
+
+10
+None
+---------------------------------------------------
+
+while 
+
+while is used fro looping in Python.
+
+The statements inside a while loop continue to execute intill condition for the while loop evelutes to False or a break statement is encountered.
+Following program illustrates this.
+-------------------------------------------------------
+i = 5
+while(i):
+    print(i)
+    i = i – 1
+-------------------------------------------------------
+Output:
+
+5
+4
+3
+2
+1
+-------------------------------------------------
+Note that 0 is equal to False.
+
+'with'
+
+'with' statement is used to wrap the execution of a block of code within methods defined by the context manager.
+
+Context manager is a class that implements __enter__ and __exit__ methods.
+Use of with statement ensures that the __exit__ method is called at the end fo the nested block.
+This concept is similar to the use of try...finally block. Here, is an example.
+-----------------------------------------------------
+with open('example.txt', 'w') as my_file:
+    my_file.write('Hello world!')
+--------------------------------------------------
+This example writes the text 'Hello world!' to the file example.txt . File objects have __enter__
+and __exit__ method defined within them, so the act as their own context manager.
+
+First the __enter__ method is called, then the code within 'with' statement is executed and finally the __exit__ methon is called.
+__exit__method is called even if there is an error. It basically closes the file stream.
+
+'yeald'
+ 
+'yield' is used inside a function like return statement. But yeald returns a generator.
+
+Generator is an iterator that generates one item at a time. A large list of value will take up a lot of memory. Generators are useful in this situation as it generates only one value
+at a time of storing all the values in memory.
+For exmple:
+------------------------------------------------------
+>>> g = (2**x for x in range(100))
+------------------------------------------------------
+will create a generator g which generates powers of 2 up to the number two raised to the power 99. We can generate the numbers using the next() function as shown below.
+-------------------------------------------------------
+>>> next(g)
+1
+>>> next(g)
+2
+>>> next(g)
+4
+>>> next(g)
+8
+>>> next(g)
+16
+---------------------------------------------------------
+And so on… This type of generator is returned by the yield statement from a function. Here is an example.
+----------------------------------------------------------
+def generator():
+    for i in range(6):
+        yield i*i
+
+g = generator()
+for i in g:
+    print(i)
+-----------------------
+Output:
+
+0
+1
+4
+9
+16
+25
+-----------------------------------------------------------------
+Here, the function generator() returns a generator that generates square of numbers from 0 to 5. This is printed in the for loop.
