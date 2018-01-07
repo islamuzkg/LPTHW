@@ -759,21 +759,21 @@ Data Types
 For data types, write out what makes up each one. For example, with strings write out how you create
 a string. For numbers write out a few numbers.
 ---------------------------------------------------------------------------
-Type 		Description 							Example					
+Type 		Description 				Example					
 ---------------------------------------------------------------------------
-True 		True boolean value. 					True or False == True	
+True 		True boolean value. 			True or False == True	
 ---------------------------------------------------------------------------
-False 		False boolean value. 					False and True == False	
+False 		False boolean value. 			False and True == False	
 ---------------------------------------------------------------------------
 None 		Represents ”nothing” or ”no value”. 	x = None				
 ---------------------------------------------------------------------------
-strings		Stores textual information. 			x = ”hello”				
+strings		Stores textual information. 		i = ”hello”				
 ---------------------------------------------------------------------------
-numbers		Stores integers. 						i = 100					
+numbers		Stores integers. 			i = 100					
 ---------------------------------------------------------------------------
-floats 		Stores decimals. 						i = 10.389					
+floats 		Stores decimals. 			i = 10.389					
 ----------------------------------------------------------------------------
-lists 		Stores a list of things. 				j = [1,2,3,4]				
+lists 		Stores a list of things. 		j = [1,2,3,4]				
 -----------------------------------------------------------------------------
 dicts 		Stores a key=value mapping of things. 	e = {’x’: 1, ’y’: 2}		
 -----------------------------------------------------------------------------
