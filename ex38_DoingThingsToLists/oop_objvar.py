@@ -38,7 +38,7 @@ class Robot:
 	@classmethod
 	def how_many(cls):
 		'''Prints the current population.'''
-		print('We have {:d} robots.'.format(cls.population))
+		print('We have {:d} robots.'.format(cls.population))	# {:d}, d is formating caracter. It tells the formatter to treat the aurgument as an integer number and format is as such.
 
 
 droid1 = Robot("R2-D2")
@@ -54,3 +54,4 @@ droid1.die()
 droid2.die()
 
 Robot.how_many()
+print(Robot.say_hi.__doc__)
