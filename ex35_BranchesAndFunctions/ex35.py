@@ -55,9 +55,9 @@ def cthulhu_room():
 	elif "head" in choice:
 		dead("Well that was tasety!")
 	else:
-		cthulhu_room
-
-def start(): # will call other functions and let's user make choice
+		cthulhu_room()
+# start function will call other functions and let's user make choice
+def start():
 	print "You are in a dark room."
 	print "There is a door to your back, right and left"
 	print "Which one do you take?"
@@ -73,8 +73,8 @@ def start(): # will call other functions and let's user make choice
 	else:
 		dead("You stumbel around the room untill you starve.")
 		exit(0)
-		
-def wolf_room():
+# Below finction will take is a wolf_room. Depending of your choice it will take you to bear_room or cthulhu_room.		
+def wolf_room(): 
 	print """
 You see hungry bear."
 He is running towards you.
@@ -91,5 +91,6 @@ Would you climb  a tree or give him your food?
 		cthulhu_room()
 	else:
 		print "Waited to much, you dead carrot head"
+		exit()
 # this function will call other ones as a starting point with the function above
 start()
