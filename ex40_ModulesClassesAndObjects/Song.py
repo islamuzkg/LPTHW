@@ -41,4 +41,3 @@ twinkle = Song(["Twinkle, twinle little start,",
 				"time to clean up where you are."])
 print '_' * 30
 twinkle.sing_me_a_song()
-
