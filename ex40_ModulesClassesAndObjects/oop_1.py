@@ -6,7 +6,7 @@ class Employee:
 		self.first = first
 		self.last = last
 		self.pay = pay
-		self.email = first + '.' + last + '@company,com'
+		self.email = first + '.' + last + '@company.com'
 	
 	
 	def fullname(self): # method function to get full name
