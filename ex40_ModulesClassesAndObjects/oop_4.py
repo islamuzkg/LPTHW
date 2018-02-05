@@ -7,7 +7,7 @@ class Employee:
 	
 	# class variable can be used by all methods/functions within this lass
 	num_of_emps = 0
-	raise_amount = 1.4
+	raise_amount = 1.04
 	
 	def __init__(self, first, last, pay):
 		self.first = first
@@ -24,11 +24,21 @@ class Employee:
 		self.pay = int(self.pay * self.raise_amount) 
 
 class Developer(Employee):
-	pass
+	raise_amount = 1.10
 
-dev_1 = Employee('Corey', 'Schafer', 50000)
-dev_2 = Employee('Tom', 'Jerrey', 60000) 
+	def __init__(self, first, last, pay, prog_lang):
+		super().__init__(first, last, pay) # super is for parent class name
+		self.prog_lang = prog_lang
 
-print(dev_1.email)
-print(dev_2.email)
 
+dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
+dev_2 = Developer('Tom', 'Jerrey', 60000, 'Java') 
+
+#print(dev_1.email)
+#print(dev_2.email)
+
+#print(dev_1.pay)
+#dev_1.apply_raise()
+#print(dev_1.pay)
+
+print(dev_2.prog_lang)
