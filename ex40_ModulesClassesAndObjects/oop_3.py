@@ -4,19 +4,19 @@
 
 
 class Employee:
-	
-	# class variable can be used by all methods/functions within this lass
+
+	# class variable can be used by all methods/functions within this class
 	num_of_emps = 0
 	raise_amount = 1.4
-	
+
 	def __init__(self, first, last, pay):
 		self.first = first
 		self.last = last
 		self.pay = pay
 		self.email = first + '.' + last + '@company.com'
-	
+
 		Employee.num_of_emps += 1
-		
+
 	def fullname(self): # method function to get full name
 		return '{} {}'.format(self.first, self.last) # will combines two variable names
 
@@ -26,14 +26,14 @@ class Employee:
 	@classmethod
 	def set_raise_amount(cls, amount):
 		cls.raise_amount = amount
-		
-	# Below class method is alternative constructor for below 
+
+	# Below class method is alternative constructor for below
 	# first, last, pay = emp_str_1.split('-')
 	@classmethod
 	def from_string(cls, emp_str):
 		first, last, pay = emp_str.split('-')
 		return cls(first, last, pay)
-		
+
 emp_1 = Employee('Isa', 'Mishev', 50000)
 emp_2 = Employee('Nano', 'Vimo', 60000)
 emp_3 = Employee('Tom', 'Monty', 100000)
@@ -57,4 +57,3 @@ Employee.set_raise_amount(1.05)
 print(Employee.raise_amount)
 print(emp_1.raise_amount)
 print(emp_2.raise_amount)
-
