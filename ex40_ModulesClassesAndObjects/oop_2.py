@@ -2,19 +2,19 @@
 # Reference Link: https://www.youtube.com/watch?v=BJ-VvGyQxho
 
 class Employee:
-	
+
 	# class variable can be used by all methods/functions within this lass
 	num_of_emps = 0
 	raise_amount = 1.4
-	
+
 	def __init__(self, first, last, pay):
 		self.first = first
 		self.last = last
 		self.pay = pay
 		self.email = first + '.' + last + '@company.com'
-	
+
 		Employee.num_of_emps += 1
-		
+
 	def fullname(self): # method function to get full name
 		return '{} {}'.format(self.first, self.last) # will combines two variable names
 
@@ -40,5 +40,5 @@ print('Dictionary details for intstance emp_1:')
 print('-' * 30)
 print(emp_1.__dict__)
 
-# see how many Employee instances we have 
+# see how many Employee instances we have
 print('_' * 40, '\n', Employee.num_of_emps)
