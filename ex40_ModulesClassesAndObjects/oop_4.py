@@ -5,7 +5,7 @@
 
 class Employee:
 
-	# class variable can be used by all methods/functions within this lass
+	# class variable can be used by all methods/functions within this class
 	num_of_emps = 0
 	raise_amount = 1.04
 

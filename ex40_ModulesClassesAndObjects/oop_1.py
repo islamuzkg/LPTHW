@@ -32,7 +32,8 @@ class Student:
 
 	def rank_year(self):
 		print('_' * 10)
-        #return '{} is {} and have trainaded {} years'.format(self.name, self.rank, self.years)
+		'''student = "{} is {} and have trainaded {} years."
+        print student.format(self.name, self.rank, self.years)'''
 		return '%s is %s and have trainaded %d years' % (self.name, self.rank, self.years)
 
 std_1 = Student('Bruno', 'black', 15)
@@ -40,3 +41,4 @@ std_2 = Student('Bred', 'blue', 3)
 
 print(std_1.name)
 print(Student.rank_year(std_1))
+print(std_1.rank_year())
