@@ -1,7 +1,7 @@
-class - Tell Python to make a new type of a thing.
-object - Two meanings: the most basic type of thing, and any instance of some thing.
-instance - What you get when you tell Python to create a class.
-def - How to define a function inside of a class.
-self - Inside the function in a class, self is variable for  instance/object being accessed.
-inheritance - The concept that one class can inherit traits from another class as parts, much like how a car has wheels.
- 
+'class' - Tell Python to make a new type of a thing.
+'object' - Two meanings: the most basic type of thing, and any instance of some thing.
+'instance' - What you get when you tell Python to create a class.
+'def' - How to define a function inside of a class.
+'self' - Inside the function in a class, self is variable for  instance/object being accessed.
+'inheritance' - The concept that one class can inherit traits from another class as parts, much like how a car has wheels.
+'attribute' - A property classes have that are from composition and are usually variables. 
