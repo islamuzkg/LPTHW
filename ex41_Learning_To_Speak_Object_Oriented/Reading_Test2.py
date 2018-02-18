@@ -43,9 +43,9 @@ def convert(snippet, phrases):
     for sentence in snippet, phrase:
         result = sentence[:]
 
-        # fake class names
-        for word in class_names:
-            result = result.replace("%%%", word, 1)
+    # fake class names
+    for word in class_names:
+        result = result.replace("%%%", word, 1)
 
         # fake other names
         for word in other_names:
@@ -67,7 +67,7 @@ try:
 
         for snippet in snippets:
             phrase = PHRASES[snippet]
-            question, answer = convert(snippet, phrase)
+            question, answer = convert(snippet, phrases)
             if PHRASE_FIRST:
                 question, answer = answer, question
 
