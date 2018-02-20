@@ -57,3 +57,26 @@ Employee.set_raise_amount(1.05)
 print(Employee.raise_amount)
 print(emp_1.raise_amount)
 print(emp_2.raise_amount)
+
+#
+# class Student:
+#
+# 	school_1 = 'Gracie'
+# 	school_2 = '10th Planet'
+#
+# 	def __init__(self, name, rank, years):
+# 		self.name = name
+# 		self.rank = rank
+# 		self.years = years
+#
+# 	def rank_year(self):
+# 		print('_' * 10)
+# 		'''student = "{} is {} and have trainaded {} years."
+#         print student.format(self.name, self.rank, self.years)'''
+# 		return '%s is %s and have trainaded %d years and trans at %s' % (self.name, self.rank, self.years, self.school_1)
+#
+# 	def school_name(self):
+# 		pass
+#
+# std_1 = Student('Bruno', 'black', 15)
+# std_2 = Student('Bred', 'blue', 3)
