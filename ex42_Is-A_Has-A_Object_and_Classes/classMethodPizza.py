@@ -13,9 +13,9 @@ class Pizza:
     # return 'Pizza(%r)' % self.ingredients
 
 	@classmethod
-	def mergherita(cls):
+	def margherita(cls):
 		return cls(['mozzarella', 'tomatoes'])
-	
+
 	@classmethod
 	def prosciutto(cls):
 		return cls(['mozzarella', 'tomatoes', 'ham'])
