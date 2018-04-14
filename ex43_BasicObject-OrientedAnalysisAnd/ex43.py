@@ -1,3 +1,5 @@
+# For more details, please see link below.
+# https://ugoproto.github.io/ugo_py_doc/Learn%20Python%20the%20Hard%20Way/#exercise-45-you-make-a-game
 from sys import exit
 from random import randint
 
@@ -12,15 +14,20 @@ class Scene(object):
 class Engine(object):
 
 	def __init__(self, scene_map):
+
 		self.scene_map = scene_map
 
 	def play(self):
+
 		current_scene = self.scene_map.opening_scene()
+
 		last_scene = self.scene_map.next_scene('finished')
 
 		while current_scene != last_scene:
+
 			next_scene_name = current_scene.enter()
-			current_scene = self.scnene_map.next_scene(next_scene_name)
+
+			current_scene = self.scene_map.next_scene(next_scene_name)
 
 		# be sure to print out the last scene
 		print last_scene
@@ -55,7 +62,7 @@ class CentralCorridor(Scene):
 		Armory and about to pull a weapon to blast you.
 		"""
 
-		acttion = raw_input("> ")
+		action = raw_input("shoot!/dodge!/tell a joke!> ")
 
 		if action == "shoot!":
 			print "Quick on the door you yank outyour blaster abd fire it at the Gothon."
@@ -130,44 +137,45 @@ class LaserWeaponArmory(Scene):
 		"""
 			return 'death'
 
-class TheBridge(Scne):
-	print """
-	You burst onto the Bridege wit the netron destruct bomb
-	under your arm and surprise 5 Gothons who are trying to
-	take of the ship. Each of the has an evel uglier
-	clown costume than the last. They haven't pulled their
-	weapon put yet, as they see active bomb under your
-	arm and don't want to set it off.
-	"""
+class TheBridge(Scene):
 
-	action = raw_input("> ")
+	def enter(self):
 
-	if action == "throw the bomb":
 		print """
-        In a panic you throw the bomb at the group of Gothons,
-		and make a leap for the door. Right as you drop in a
-		Gothon shotts you right in the back killing you.
-		As you die you see another Gothon tries to disarm
-		the bomb. You die knowning they will probably blow up when
-		it goes off.
+		You burst onto the Bridege wit the netron destruct bomb
+		under your arm and surprise 5 Gothons who are trying to
+		take of the ship. Each of the has an evel uglier
+		clown costume than the last. They haven't pulled their
+		weapon put yet, as they see active bomb under your
+		arm and don't want to set it off.
 		"""
-		return 'death'
 
-	elif action == "slowly place the bomp":
-		print """
-		You point your blaster at the bomb under your arm
-		and Gothons puts their hands up start to sweat.
-		You inch backwards to the door, open it, and then carefully
-		place the bomb on the floor, pointing your blaster at it.
-		You then jump bckthrought eh door, punch the close button
-		and bast the lock so the Gothons can't get out.
-		Now that the bomb is placed you run to escape the pod to
-		get off this tin can.
-		"""
-		return 'escape_pod'
-	else:
-		print "DOES NOT COMPUTE"
-		print "the_bridge"
+		action = raw_input("> ")
+
+		if action == "throw the bomb":
+			print "In a panic you throw the bomb at the group of Gothons,"
+			print "and make a leap for the door. Right as you drop in a"
+			print "Gothon shotts you right in the back killing you."
+			print "As you die you see another Gothon tries to disarm"
+			print "the bomb. You die knowning they will probably blow up when"
+			print "it goes off."
+			return "death"
+
+		elif action == "slowly place the bomp":
+			print """
+			You point your blaster at the bomb under your arm
+			and Gothons puts their hands up start to sweat.
+			You inch backwards to the door, open it, and then carefully
+			place the bomb on the floor, pointing your blaster at it.
+			You then jump bckthrought eh door, punch the close button
+			and bast the lock so the Gothons can't get out.
+			Now that the bomb is placed you run to escape the pod to
+			get off this tin can.
+			"""
+			return 'escape_pod'
+		else:
+			print "DOES NOT COMPUTE"
+			print "the_bridge"
 
 
 class EscapePod(Scene):
@@ -199,7 +207,6 @@ class EscapePod(Scene):
 			print "back and see your ship implode than explode like a"
 			print "bright star, taking out the Gothon ship at the same"
 			print "time. You won!"
-
 			return 'finished'
 
 
@@ -224,12 +231,12 @@ class Map(object):
 		self.start_scene = start_scene
 
 	def next_scene(self, scene_name):
-		val = Map.scene.get(scene.name)
+		val = Map.scenes.get(scene_name)
 		return val
 
 	def opening_scene(self):
 		return self.next_scene(self.start_scene)
 
 a_map = Map('central_corridor')
-a_game = Emgine(a_map)
+a_game = Engine(a_map)
 a_game.play()
