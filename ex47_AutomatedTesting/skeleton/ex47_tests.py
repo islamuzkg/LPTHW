@@ -1,5 +1,5 @@
 from nose.tools import *
-import ex47 import Room
+from ex47.game import Room
 
 def test_room():
 	gold = Room("GoldRoom",
@@ -12,13 +12,17 @@ def test_room_paths():
 	north = Room("North", "Test room in the north.")
 	south = Room("South", "Test room in the south.")
 
-	center.add_path({'north': north, 'south': south})
+	center.add_paths({'north': north, 'south': south})
 
 def test_map():
 	start = Room("Start", "You can go west and down a hole.")
 	west = Room("Trees", "There are trees here, you can go east.")
 	down = Room("Dongeon", "It is dark down here, you can go up")
+	
+	start.add_paths({'west': west, 'down': down})
+	west.add_paths({'east': start})
+	down.add_paths({'up': start})
 
 	assert_equal(start.go('west'), west)
-	assert_equal(start.go('east'), start)
-	assert_equal(start.go('down'), start)
+	assert_equal(start.go('west').go('east'), start)
+	assert_equal(start.go('down').go('up'), start)
