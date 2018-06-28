@@ -6,7 +6,7 @@ nouns = ('door', 'bear', 'princess', 'cabinet')
 def get_tuple(word):
 	lowercased = word.lower()
 
-	if lowerecased in directions:
+	if lowercased in directions:
 		return ('direction', lowercased)
 	elif lowercased in verbs:
 		return ('verb', lowercased)
