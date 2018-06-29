@@ -1,8 +1,10 @@
+# Reference link: https://github.com/bitsai/book-exercises/blob/master/Learn%20Python%20the%20Hard%20Way/projects/ex48/tests/ex48_tests.py#L36
+
 from nose.tools import *
 from ex48 import lexicon
 
-def test_direction():
-	assert_equal(lexicon.scan("norht"),[('direction', 'north')])
+def test_directions():
+	assert_equal(lexicon.scan("north"),[('direction', 'north')])
 	result = lexicon.scan("north south east")
 	assert_equal(result, [('direction', 'north'),
 				('direction', 'south'),
@@ -23,12 +25,12 @@ def test_nouns():
 				('noun', 'princess')])
 
 def test_numbers():
-	assert_equal(lexicon("1234"), [('number', 1234)])
+	assert_equal(lexicon.scan("1234"), [('number', 1234)])
 	result = lexicon.scan("3 91234")
 	assert_equal(result, [('number', 3),
 				('number', 91234)])
 
-def test_error():
+def test_errors():
 	assert_equal(lexicon.scan("ASDFADFASDF"), [('error', 'ASDFADFASDF')])
 	result = lexicon.scan("bear I AS princess")
 	assert_equal(result, [('noun', 'bear'),
@@ -37,7 +39,7 @@ def test_error():
 
 def test_capitalization():
 	result = lexicon.scan("the The tHe thE")
-	assert_equal(ersult, [('stop', 'the'),
+	assert_equal(result, [('stop', 'the'),
 				('stop', 'the'),
 				('stop', 'the'),
 				('stop', 'the')])
